@@ -106,7 +106,8 @@ class QueueInput(object):
 
         if self.is_train:
             image = self._augument(image)
-            min_queue_examples = 256
+            #min_queue_examples = 256
+            min_queue_examples = batch_size * 2
 
             images, labels = tf.train.shuffle_batch(
                 [image, label],
