@@ -77,11 +77,8 @@ def start_train():
         summary_op = tf.summary.merge_all()        
 
         # Start running operations on the Graph.
-        #gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=1.0)
-        #session_config = tf.ConfigProto(gpu_options=gpu_options)
-        gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.2, allow_growth=True)
+        gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=1.0, allow_growth=True)
         session_config = tf.ConfigProto(gpu_options=gpu_options)
-        #session_config.gpu_options.allow_growth = True
 
         nan_hook = tf.train.NanTensorHook(loss_tensor=loss)
         saver_hook = tf.train.CheckpointSaverHook(saver=saver, checkpoint_dir=FLAGS.parameter_dir, save_steps=1000)
