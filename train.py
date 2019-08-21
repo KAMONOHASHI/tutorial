@@ -79,7 +79,7 @@ def start_train():
         # Start running operations on the Graph.
         #gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=1.0)
         #session_config = tf.ConfigProto(gpu_options=gpu_options)
-        gpu_options = tf.GPUOptions(allow_growth=True)
+        gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.2, allow_growth=True)
         session_config = tf.ConfigProto(gpu_options=gpu_options)
         #session_config.gpu_options.allow_growth = True
 
