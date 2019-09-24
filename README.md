@@ -1,12 +1,17 @@
 # 概要
-cifar10を解くkamonohashiデモ用モデル。
+
+KAMONOHASHI tutorial用リポジトリ
 
 # 学習
+cifar10を解くkamonohashiデモ用モデル。
+
 ```
 ./train.py
 ```
 
-# 評価
+# 前処理
+データのリサイズをするスクリプト
+
 ```
-./eval.py
+./resize.py
 ```
